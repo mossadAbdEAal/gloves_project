@@ -43,18 +43,21 @@ class _SwitchExampleState extends State<SwitchExample> {
       },
     );
 
-    return Switch(
-      // This bool value toggles the switch.
-      value: light,
-      overlayColor: overlayColor,
-      trackColor: trackColor,
-      thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
-      onChanged: (bool value) {
-        // This is called when the user toggles the switch.
-        setState(() {
-          light = value;
-        });
-      },
+    return Transform.scale(
+      scale: 0.8,
+      child: Switch(
+        // This bool value toggles the switch.
+        value: light,
+        overlayColor: overlayColor,
+        trackColor: trackColor,
+        thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
+        onChanged: (bool value) {
+          // This is called when the user toggles the switch.
+          setState(() {
+            light = value;
+          });
+        },
+      ),
     );
   }
 }
