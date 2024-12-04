@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget(
-      {super.key, required this.imagepath, required this.text});
+      {super.key,
+      required this.imagepath,
+      required this.text,
+      required this.color});
   final String imagepath;
   final String text;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xffF2F2F2),
+      color: color,
       clipBehavior: Clip.none,
       shadowColor: Colors.grey,
       elevation: 10,

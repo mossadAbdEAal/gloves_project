@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gloves_app/screens/learn_sign_screen.dart';
 import 'package:gloves_app/widgets/custom_card_widget.dart';
+import 'package:gloves_app/widgets/custom_grid_builder.dart';
 import 'package:gloves_app/widgets/custom_switch_widget.dart';
 
 class MainScreen extends StatefulWidget {
@@ -13,22 +15,44 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
-    List<Widget> Cards = const [
-      CustomCardWidget(
-        imagepath: 'assets/images/fda86eccd9dab4c3af70de6333b9c1c6.jpeg',
-        text: 'Translation',
+    List<Widget> Cards = [
+      GestureDetector(
+        onTap: () {},
+        child: const CustomCardWidget(
+          imagepath: 'assets/images/fda86eccd9dab4c3af70de6333b9c1c6.jpeg',
+          text: 'Translation',
+          color: Color(0xffF2F2F2),
+        ),
       ),
-      CustomCardWidget(
-        imagepath: 'assets/images/8027dfdbcdf8036254db9c69dafebfcb.png',
-        text: 'Learn Sign',
+      GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const LearnSignScreen(
+              text: 'Learn sign',
+            );
+          }));
+        },
+        child: const CustomCardWidget(
+          imagepath: 'assets/images/8027dfdbcdf8036254db9c69dafebfcb.png',
+          text: 'Learn Sign',
+          color: Color(0xffF2F2F2),
+        ),
       ),
-      CustomCardWidget(
-        imagepath: 'assets/images/739861a47f8d11d0e33f8e61144d5db8.png',
-        text: 'Connect Gloves',
+      GestureDetector(
+        onTap: () {},
+        child: const CustomCardWidget(
+          imagepath: 'assets/images/739861a47f8d11d0e33f8e61144d5db8.png',
+          text: 'Connect Gloves',
+          color: Color(0xffF2F2F2),
+        ),
       ),
-      CustomCardWidget(
-        imagepath: 'assets/images/1548e8e53b726af3555f0f47e482cce0.png',
-        text: 'Quiz',
+      GestureDetector(
+        onTap: () {},
+        child: const CustomCardWidget(
+          imagepath: 'assets/images/1548e8e53b726af3555f0f47e482cce0.png',
+          text: 'Quiz',
+          color: Color(0xffF2F2F2),
+        ),
       )
     ];
 
@@ -53,32 +77,13 @@ class _MainScreenState extends State<MainScreen> {
                       padding: EdgeInsets.only(top: 30, right: 20),
                       child: SwitchExample()),
                 ]),
-                Padding(
-                  padding: const EdgeInsets.only(top: 250.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15)),
-                        color: Colors.white),
-                    height: 550,
-                    child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2, // number of items in each row
-                        mainAxisSpacing: 15.0, // spacing between rows
-                        crossAxisSpacing: 15.0, // spacing between columns
-                      ),
-                      padding: const EdgeInsets.only(
-                          left: 10,
-                          right: 10,
-                          top: 80), // padding around the grid
-                      itemCount: Cards.length, // total number of items
-                      itemBuilder: (context, index) {
-                        return Cards[index];
-                      },
-                    ),
-                  ),
+                CustomGridBuilder(
+                  cards: Cards,
+                  height: 230,
+                  height2: 550,
+                  color: Colors.white,
+                  paddingtop: 80,
+                  countitem: 2,
                 ),
               ],
             ),
