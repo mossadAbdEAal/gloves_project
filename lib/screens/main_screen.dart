@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gloves_app/screens/learn_sign_screen.dart';
+import 'package:gloves_app/screens/transaltion_screen.dart';
 import 'package:gloves_app/widgets/custom_card_widget.dart';
 import 'package:gloves_app/widgets/custom_grid_builder.dart';
 import 'package:gloves_app/widgets/custom_switch_widget.dart';
@@ -17,7 +18,13 @@ class _MainScreenState extends State<MainScreen> {
     // ignore: non_constant_identifier_names
     List<Widget> Cards = [
       GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const TransaltionScreen(
+              text: 'Translation',
+            );
+          }));
+        },
         child: const CustomCardWidget(
           imagepath: 'assets/images/fda86eccd9dab4c3af70de6333b9c1c6.jpeg',
           text: 'Translation',

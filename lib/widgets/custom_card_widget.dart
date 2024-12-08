@@ -5,10 +5,16 @@ class CustomCardWidget extends StatelessWidget {
       {super.key,
       required this.imagepath,
       required this.text,
-      required this.color});
+      required this.color,
+      this.width = 120,
+      this.height = 120,
+      this.fontsize = 16});
   final String imagepath;
   final String text;
   final Color color;
+  final double width;
+  final double height;
+  final double fontsize;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +30,8 @@ class CustomCardWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(70),
             child: Image.asset(
               imagepath,
-              width: 120,
-              height: 120,
+              width: width,
+              height: height,
             ),
           ),
           const SizedBox(
@@ -33,7 +39,7 @@ class CustomCardWidget extends StatelessWidget {
           ),
           Text(
             text,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontsize),
           ),
           const SizedBox(
             height: 15,
