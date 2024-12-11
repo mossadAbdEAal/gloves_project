@@ -42,7 +42,7 @@ class _CustomItemWidgetState extends State<CustomItemWidget> {
               ? widget.height
               : widget.height, // Height change on hover
           decoration: BoxDecoration(
-            color: const Color(0xffDAE0F1),
+            color: Colors.black,
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
@@ -73,7 +73,7 @@ class _CustomItemWidgetState extends State<CustomItemWidget> {
                 opacity: isHovered ? 1.0 : 0.0, // Fade-in text on hover
                 child: Text(
                   widget.text,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

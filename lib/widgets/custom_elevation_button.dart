@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomElevationButton extends StatelessWidget {
   const CustomElevationButton(
-      {super.key,
-      required this.text,
-      required this.textcolor,
-      required this.bottoncolor});
+      {super.key, required this.text, required this.bottoncolor});
   final String text;
-  final Color textcolor;
+
   final Color bottoncolor;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class CustomElevationButton extends StatelessWidget {
         onPressed: () {},
         child: Text(
           text,
-          style: TextStyle(color: textcolor, fontWeight: FontWeight.w600),
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
     );
